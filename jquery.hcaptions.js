@@ -92,18 +92,18 @@
 
 				// Hover events
 				$wrap.hover(function(){
-					$target.show().stop(true, true).animate({ 'top': _overlay_css.top, 'left': _overlay_css.left }, opts.speed, opts.onshow());
+					$target.show().stop(true, true).animate({ 'top': _overlay_css.top, 'left': _overlay_css.left }, +opts.speed, opts.onshow());
 				}, function(){
-					$target.show().stop(true, true).animate(slide_css, opts.speed, opts.onhide());
+					$target.show().stop(true, true).animate(slide_css, +opts.speed, opts.onhide());
 				});
 				
 			// fade effect
 			} else if (opts.effect=='fade') {
 				$target.css('z-index',opts.zindex+1).hide();
 				$wrap.hover(function () {
-					$target.stop(true, true).fadeIn(opts.speed, opts.onshow());
+					$target.stop(true, true).fadeIn(+opts.speed, opts.onshow());
 				}, function () {
-					$target.stop(true, true).fadeOut(opts.speed, opts.onhide());
+					$target.stop(true, true).fadeOut(+opts.speed, opts.onhide());
 				});
 			
 			// just show/hide
