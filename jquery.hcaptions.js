@@ -1,6 +1,6 @@
 (function($){
 
-  var Captions = function(el, opts) {
+	var Captions = function(el, opts) {
 		var _this = this,
 		    $this = $(el),
 		    $el = $this.clone(),
@@ -8,24 +8,37 @@
 		    $target = $($this.attr('data-target') || (href && href.replace(/.*(?=#[^\s]+$)/, ''))), //strip for ie7
 		    _overlay_css = {};
 
-		this.set_from_attr(el, opts);
-
-		var w = $this.prop('offsetWidth'),
-			h = $this.prop('offsetHeight'),
-			overlay_w = opts.width || w,
-			overlay_h = opts.height || h;
-
-		$wrap = $('<div class="drop-panel" />',{position: 'relative', 'z-index': 1, display: 'block', overflow: 'hidden'})
-		        .append($el)
-		        .append($target);
-
-		$this.replaceWith($wrap);
 
 		if ($target.length) {
-			$target.hide();
+
+			this.set_from_attr(el, opts);
+
+			$wrap = $('<div class="drop-panel" />',{position: 'relative', 'z-index': 1, display: 'block', overflow: 'hidden'})
+			        .append($el)
+			        .append($target);
 			
-			$wrap.css({ 'position':'relative', 'overflow':'hidden' });
-			$target.css({ 'width':overlay_w, 'height':overlay_h, 'position':'absolute', 'z-index':33 });
+
+
+			$this.replaceWith($wrap);
+			$target.hide();
+
+			$wrap.css({ 'position':'relative', 'overflow':'hidden', display: 'block', padding:'2px' });
+
+			if (opts.find_image && $this.not('img'))
+			{
+				var img = $wrap.find('img'),
+					w = img.width(),
+					h = img.height();
+			}
+			else {
+				var w = $wrap.outerWidth(),
+					h = $wrap.outerHeight();
+			}
+
+			var overlay_w = opts.width || w,
+				overlay_h = opts.height || h;
+
+			$target.css({ 'width':overlay_w, 'height':overlay_h, 'position':'absolute', 'z-index':33, overflow: 'hidden' });
 
 			var _overlay_css = {};
 			
@@ -84,10 +97,8 @@
 					$target.show().stop(true, true).animate(slide_css, opts.speed, opts.onhide());
 				});
 				
-									
 			// fade effect
 			} else if (opts.effect=='fade') {
-				
 				$target.css('z-index',opts.zindex+1).hide();
 				$wrap.hover(function () {
 					$target.stop(true, true).fadeIn(opts.speed, opts.onshow());
@@ -156,7 +167,7 @@
 		 * Overlay height
 		 * @type {Number}
 		 */
-		height: 200,
+		height: 0,
 
 		/**
 		 * Horizontal position for the overlay
@@ -209,6 +220,8 @@
 		 * @type {Number}
 		 */
 		zindex: 2,
+
+		find_image: false,
 
 		/**
 		 * On show callback
