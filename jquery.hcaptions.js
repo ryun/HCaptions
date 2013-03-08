@@ -8,7 +8,10 @@
 		    $target = $($this.attr('data-target') || (href && href.replace(/.*(?=#[^\s]+$)/, ''))), //strip for ie7
 		    _overlay_css = {};
 
-
+		if ( ! $target.length )
+		{
+			$target = $this.next(opts.data_selector);
+		}
 		if ($target.length) {
 
 			this.set_from_attr(el, opts);
