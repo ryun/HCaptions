@@ -1,56 +1,345 @@
 <!DOCTYPE html>
-<html>
+<!--[if IE 8]> 				 <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
 
-  <head>
-    <meta charset='utf-8' />
-    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
-    <meta name="description" content="Hcaptions : Hover Captions (here in after: HCaptions) is a jQuery plugin that enables you to display caption overlays with cool effects over images, div's, ect.." />
+<head>
+	<meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width" />
+  <title>Hover Captions (HCaptions.js)</title>
 
-    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+  <link rel="stylesheet" href="css/normalize.css" />  
+  <link rel="stylesheet" href="css/foundation.css" />
+  <link rel="stylesheet" href="css/font-awesome.css">
+  <link rel="stylesheet" href="css/highlighter/shCore.css"/>
+  <link rel="stylesheet" href="css/highlighter/shThemeDefault.css" />
+  <!--[if IE 7]>
+  <link rel="stylesheet" href="css/font-awesome-ie7.min.css">
+  <![endif]-->
+  <link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Lato:300|Raleway:300'>
 
-    <title>Hcaptions</title>
-  </head>
+  <script src="js/vendor/custom.modernizr.js"></script>
+  <script src="js/vendor/jquery.js"></script>
+  <script src="https://github.com/ryun/HCaptions/raw/master/jquery.hcaptions.js"></script>
+  <script type="text/javascript" src="js/vendor/highlighter/XRegExp.js"></script>
+  <script type="text/javascript" src="js/vendor/highlighter/shCore.js"></script>
+  <script type="text/javascript" src="js/vendor/highlighter/shAutoloader.js"></script>
 
-  <body>
+<style>
+.cap-overlay .button { margin-top:10px}
+.cap-overlay{width: 100%; color:#fff; background: rgba(0, 0, 0, 0.43);left:0;padding:12px; line-height: 1.4em;font-size:14px}
+.cap-overlay h5 {color:#fff;}
+a[data-toggle="drop-panel"] {display: block;}
+</style>
+</head>
+<body>
 
-    <!-- HEADER -->
-    <div id="header_wrap" class="outer">
-        <header class="inner">
-          <a id="forkme_banner" href="https://github.com/ryun/HCaptions">View on GitHub</a>
+<div class="row">
+  <div class="large-7 columns">
+    <h1>Hover Caption (HCaptions.js)</h1>
+  </div>
+  <div class="large-5 columns right">
+    <br /><br />
+    <ul class="button-group right">
+      <li><a class="button small right" href="https://github.com/ryun/HCaptions/zipball/master"><i class="icon-download-alt"></i> Download .zip</a></li>
+      <li><a class="button small right" href="https://github.com/ryun/HCaptions/tarball/master"><i class="icon-download-alt"></i> Download tar.gz</a></li>
+    </ul>
+  </div>
+</div>
+<hr />
 
-          <h1 id="project_title">Hcaptions</h1>
-          <h2 id="project_tagline">Hover Captions (here in after: HCaptions) is a jQuery plugin that enables you to display caption overlays with cool effects over images, div's, ect..</h2>
+<div class="row">
+  
+  <div class="large-8 columns">
+    <h3>Default Example</h3>
+    <h5 class="subheader">This example uses all default settings.</h5>
+    <pre class="brush: html; ">
+      &lt;a href=&quot;#myToggle&quot; class=&quot;panel&quot;&gt;
+        &lt;img src=&quot;http://placehold.it/470x300/f1f1f1/aaa&amp;text=Example&quot; /&gt;
+      &lt;/a&gt;
+      &lt;div id=&quot;myToggle&quot; class=&quot;cap-overlay hide&quot;&gt;
+        &lt;h5&gt;Cupcakes&lt;/h5&gt;
+        &lt;div class=&quot;content&quot;&gt;
+          Name: cupcakes.png&lt;br /&gt;
+          Photography: Ryun Shofner&lt;br /&gt;
+          &lt;a href=&quot;javascript:void(0)&quot; class=&quot;button small&quot;&gt;&lt;i class=&quot;icon-edit&quot;&gt;&lt;/i&gt; Edit&lt;/a&gt; 
+          &lt;a href=&quot;javascript:void(0)&quot; class=&quot;button small&quot;&gt;&lt;i class=&quot;icon-remove&quot;&gt;&lt;/i&gt; Delete&lt;/a&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    </pre>
+  </div>
 
-            <section id="downloads">
-              <a class="zip_download_link" href="https://github.com/ryun/HCaptions/zipball/master">Download this project as a .zip file</a>
-              <a class="tar_download_link" href="https://github.com/ryun/HCaptions/tarball/master">Download this project as a tar.gz file</a>
-            </section>
-        </header>
+  <div class="large-4 columns">
+    <a href="#myToggle" data-toggle="drop-panel" class="panel">
+      <img src="http://placehold.it/470x300/f1f1f1/aaa&text=Example" />
+    </a>
+    <div id="myToggle" class="cap-overlay hide">
+      <h5>Cupcakes</h5>
+      <div class="content">
+        Name: cupcakes.png<br />
+        Photography: Ryun Shofner<br />
+        <a href="javascript:void(0)" class="button small"><i class="icon-edit"></i> Edit</a> 
+        <a href="javascript:void(0)" class="button small"><i class="icon-remove"></i> Delete</a>
+      </div>
     </div>
 
-    <!-- MAIN CONTENT -->
-    <div id="main_content_wrap" class="outer">
-      <section id="main_content" class="inner">
-        <h3>Welcome to GitHub Pages.</h3>
+  </div>
 
-<p>This automatic page generator is the easiest way to create beautiful pages for all of your projects. Author your page content here using GitHub Flavored Markdown, select a template crafted by a designer, and publish. After your page is generated, you can check out the new branch:</p>
+  <hr />
+</div>
 
-<pre><code>$ cd your_repo_root/repo_name
-$ git fetch origin
-$ git checkout gh-pages
-</code></pre>
-      </section>
+<div class="row">
+  
+  <div class="large-8 columns">
+    <h3>Fade Effect</h3>
+    <h5 class="subheader">This example demonstrates the fade effect setting.</h5>
+    <pre class="brush: html; ">
+      cap-effect="fade"
+    </pre>
+  </div>
+
+  <div class="large-4 columns">
+    <a href="#myToggle" data-toggle="drop-panel" class="panel" cap-effect="fade">
+      <img src="http://placehold.it/470x300/f1f1f1/aaa&text=Example" />
+    </a>
+    <div id="myToggle" class="cap-overlay hide">
+      <h5>Cupcakes</h5>
+      <div class="content">
+        Name: cupcakes.png<br />
+        Photography: Ryun Shofner<br />
+        <a href="javascript:void(0)" class="button small"><i class="icon-edit"></i> Edit</a> 
+        <a href="javascript:void(0)" class="button small"><i class="icon-remove"></i> Delete</a>
+      </div>
     </div>
 
-    <!-- FOOTER  -->
-    <div id="footer_wrap" class="outer">
-      <footer class="inner">
-        <p class="copyright">Hcaptions maintained by <a href="https://github.com/ryun">ryun</a></p>
-        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
-      </footer>
+  </div>
+
+  <hr />
+</div>
+
+<div class="row">
+  
+  <div class="large-8 columns">
+    <h3>Slide direction: left</h3>
+    <h5 class="subheader">This example demonstrates the slide effect.</h5>
+    <pre class="brush: html; ">
+      cap-effect="slide"
+      cap-direction="left"
+    </pre>
+  </div>
+
+  <div class="large-4 columns">
+    <a href="#myToggle" data-toggle="drop-panel" class="panel" cap-direction="left">
+      <img src="http://placehold.it/470x300/f1f1f1/aaa&text=Example" />
+    </a>
+    <div id="myToggle" class="cap-overlay hide">
+      <h5>Cupcakes</h5>
+      <div class="content">
+        Name: cupcakes.png<br />
+        Photography: Ryun Shofner<br />
+        <a href="javascript:void(0)" class="button small"><i class="icon-edit"></i> Edit</a> 
+        <a href="javascript:void(0)" class="button small"><i class="icon-remove"></i> Delete</a>
+      </div>
     </div>
 
-    
+  </div>
 
-  </body>
+  <hr />
+</div>
+
+<div class="row">
+  
+  <div class="large-8 columns">
+    <h3>Slide direction: right</h3>
+    <h5 class="subheader">This example demonstrates the slide effect.</h5>
+    <pre class="brush: html; ">
+      cap-effect="slide"
+      cap-direction="right"
+    </pre>
+  </div>
+
+  <div class="large-4 columns">
+    <a href="#myToggle" data-toggle="drop-panel" class="panel" cap-direction="right">
+      <img src="http://placehold.it/470x300/f1f1f1/aaa&text=Example" />
+    </a>
+    <div id="myToggle" class="cap-overlay hide">
+      <h5>Cupcakes</h5>
+      <div class="content">
+        Name: cupcakes.png<br />
+        Photography: Ryun Shofner<br />
+        <a href="javascript:void(0)" class="button small"><i class="icon-edit"></i> Edit</a> 
+        <a href="javascript:void(0)" class="button small"><i class="icon-remove"></i> Delete</a>
+      </div>
+    </div>
+
+  </div>
+
+  <hr />
+</div>
+
+<div class="row">
+  
+  <div class="large-8 columns">
+    <h3>Slide direction: top</h3>
+    <h5 class="subheader">This example demonstrates the slide effect.</h5>
+    <pre class="brush: html; ">
+      cap-effect="slide"
+      cap-direction="top"
+    </pre>
+  </div>
+
+  <div class="large-4 columns">
+    <a href="#myToggle" data-toggle="drop-panel" class="panel" cap-direction="top">
+      <img src="http://placehold.it/470x300/f1f1f1/aaa&text=Example" />
+    </a>
+    <div id="myToggle" class="cap-overlay hide">
+      <h5>Cupcakes</h5>
+      <div class="content">
+        Name: cupcakes.png<br />
+        Photography: Ryun Shofner<br />
+        <a href="javascript:void(0)" class="button small"><i class="icon-edit"></i> Edit</a> 
+        <a href="javascript:void(0)" class="button small"><i class="icon-remove"></i> Delete</a>
+      </div>
+    </div>
+
+  </div>
+
+  <hr />
+</div>
+
+<div class="row">
+  
+  <div class="large-8 columns">
+    <h3>Slide direction: bottom</h3>
+    <h5 class="subheader">This example demonstrates the slide effect.</h5>
+    <pre class="brush: html; ">
+      cap-effect="slide"
+      cap-direction="right"
+    </pre>
+  </div>
+
+  <div class="large-4 columns">
+    <a href="#myToggle" data-toggle="drop-panel" class="panel" cap-direction="bottom">
+      <img src="http://placehold.it/470x300/f1f1f1/aaa&text=Example" />
+    </a>
+    <div id="myToggle" class="cap-overlay hide">
+      <h5>Cupcakes</h5>
+      <div class="content">
+        Name: cupcakes.png<br />
+        Photography: Ryun Shofner<br />
+        <a href="javascript:void(0)" class="button small"><i class="icon-edit"></i> Edit</a> 
+        <a href="javascript:void(0)" class="button small"><i class="icon-remove"></i> Delete</a>
+      </div>
+    </div>
+
+  </div>
+
+  <hr />
+</div>
+
+<div class="row">
+<div class="large-12">
+  <h3>Configuration</h3>
+  <h5 class="subheader">Most settings can be set with the plugin or with "magic attributes" you can override the settings for individual captions. A magic attribute is a attribute prepended with <code>cap-</code> for example to override the <code>effect</code> setting, you would use <code>cap-effect="fade"</code> as a html attribute in your tags.</h5>
+<table>
+<tbody><tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Default</th>
+</tr>
+<tr>
+<td>data_selector</td>
+<td>string</td>
+<td>Selector for caption content</td>
+<td>.cap-overlay</td>
+</tr>
+<tr>
+<td>width</td>
+<td>integer</td>
+<td>Overlay width</td>
+<td>full width</td>
+</tr>
+<tr>
+<td>height</td>
+<td>integer</td>
+<td>Overlay height</td>
+<td>full height</td>
+</tr>
+<tr>
+<td>overlay_x</td>
+<td>string</td>
+<td>Horizontal position for the overlay [center, left, right]</td>
+<td>center</td>
+</tr>
+<tr>
+<td>overlay_y</td>
+<td>string</td>
+<td>Vertical position for the overlay [center, top, bottom]</td>
+<td>center</td>
+</tr>
+<tr>
+<td>overlay_bg</td>
+<td>string</td>
+<td>Background css for overlay</td>
+<td>inherits</td>
+</tr>
+<tr>
+<td>overlay_opacity</td>
+<td>integer</td>
+<td>Opacity of overlay</td>
+<td>1</td>
+</tr>
+<tr>
+<td>effect</td>
+<td>string</td>
+<td>Effect for overlay [fade, slide, show/hide]</td>
+<td>slide</td>
+</tr>
+<tr>
+<td>speed</td>
+<td>integer</td>
+<td>Animation speed in ms</td>
+<td>400</td>
+</tr>
+<tr>
+<td>direction</td>
+<td>string</td>
+<td>Direction of overlay [top, bottom, right, left]</td>
+<td>top</td>
+</tr>
+<tr>
+<td>zindex</td>
+<td>integer</td>
+<td>Base Z-Index</td>
+<td>2</td>
+</tr>
+<tr>
+<td>onshow</td>
+<td>function</td>
+<td>Callback fired when caption is shown</td>
+<td>none</td>
+</tr>
+<tr>
+<td>onhide</td>
+<td>function</td>
+<td>Callback fired when caption is hidden</td>
+<td>none</td>
+</tr>
+</tbody></table>
+</div>
+</div>
+<script>
+SyntaxHighlighter.autoloader(
+  [ 'css', '../scripts/shBrushCss.js' ],
+  [ 'js', 'jscript', 'javascript', 'js/vendor/highlighter/shBrushJScript.js' ],
+  [ 'xml', 'xhtml', 'xslt', 'html', 'js/vendor/highlighter/shBrushXml.js' ]
+);
+SyntaxHighlighter.defaults['toolbar'] = false;
+SyntaxHighlighter.all();
+
+$(window).load(function () {
+  $('[data-toggle=drop-panel]').hcaptions();
+});
+</script>
+</body>
 </html>
