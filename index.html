@@ -1,7 +1,6 @@
 <!DOCTYPE html>
-<!--[if IE 8]> 				 <html class="no-js lt-ie9" lang="en"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
-
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en"><![endif]-->
+<!--[if gt IE 8]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
 	<meta charset="utf-8" />
   <meta name="viewport" content="width=device-width" />
@@ -24,12 +23,12 @@
   <script type="text/javascript" src="js/vendor/highlighter/shCore.js"></script>
   <script type="text/javascript" src="js/vendor/highlighter/shAutoloader.js"></script>
 
-<style>
-.cap-overlay .button { margin-top:10px}
-.cap-overlay{width: 100%; color:#fff; background: rgba(0, 0, 0, 0.43);left:0;padding:12px; line-height: 1.4em;font-size:14px}
-.cap-overlay h5 {color:#fff;}
-a[data-toggle="drop-panel"] {display: block;}
-</style>
+  <style>
+  .cap-overlay .button { margin-top:10px}
+  .cap-overlay{width: 100%; color:#fff; background: rgba(0, 0, 0, 0.43);left:0;padding:12px; line-height: 1.4em;font-size:14px}
+  .cap-overlay h5 {color:#fff;}
+  a[data-toggle="drop-panel"] {display: block;}
+  </style>
 </head>
 <body>
 
@@ -93,6 +92,15 @@ a[data-toggle="drop-panel"] {display: block;}
   <div class="large-8 columns">
     <h3>Fade Effect</h3>
     <h5 class="subheader">This example demonstrates the fade effect setting.</h5>
+
+    Config
+    <pre class="brush: js;">
+      $(selector).hcaptions({
+        effect: "fade"
+      });
+    </pre>
+
+    Magic Attributes
     <pre class="brush: html; ">
       cap-effect="fade"
     </pre>
@@ -122,6 +130,16 @@ a[data-toggle="drop-panel"] {display: block;}
   <div class="large-8 columns">
     <h3>Slide direction: left</h3>
     <h5 class="subheader">This example demonstrates the slide effect.</h5>
+
+    Config
+    <pre class="brush: js;">
+      $(selector).hcaptions({
+        effect: "slide",
+        direction: "left"
+      });
+    </pre>
+
+    Magic Attributes
     <pre class="brush: html; ">
       cap-effect="slide"
       cap-direction="left"
@@ -152,7 +170,17 @@ a[data-toggle="drop-panel"] {display: block;}
   <div class="large-8 columns">
     <h3>Slide direction: right</h3>
     <h5 class="subheader">This example demonstrates the slide effect.</h5>
-    <pre class="brush: html; ">
+
+    Config
+    <pre class="brush: js;">
+      $(selector).hcaptions({
+        effect: "slide",
+        direction: "right"
+      });
+    </pre>
+
+    Magic Attributes
+    <pre class="brush: js;">
       cap-effect="slide"
       cap-direction="right"
     </pre>
@@ -182,7 +210,17 @@ a[data-toggle="drop-panel"] {display: block;}
   <div class="large-8 columns">
     <h3>Slide direction: top</h3>
     <h5 class="subheader">This example demonstrates the slide effect.</h5>
-    <pre class="brush: html; ">
+
+    Config
+    <pre class="brush: js;">
+      $(selector).hcaptions({
+        effect: "slide",
+        direction: "top"
+      });
+    </pre>
+    
+    Magic Attributes
+    <pre class="brush: js; ">
       cap-effect="slide"
       cap-direction="top"
     </pre>
@@ -212,9 +250,19 @@ a[data-toggle="drop-panel"] {display: block;}
   <div class="large-8 columns">
     <h3>Slide direction: bottom</h3>
     <h5 class="subheader">This example demonstrates the slide effect.</h5>
-    <pre class="brush: html; ">
+
+    Config
+    <pre class="brush: js;">
+      $(selector).hcaptions({
+        effect: "slide",
+        direction: "bottom"
+      });
+    </pre>
+
+    Magic Attributes
+    <pre class="brush: js; ">
       cap-effect="slide"
-      cap-direction="right"
+      cap-direction="bottom"
     </pre>
   </div>
 
@@ -238,95 +286,181 @@ a[data-toggle="drop-panel"] {display: block;}
 </div>
 
 <div class="row">
+  
+  <div class="large-8 columns">
+    <h3>Slide speed: 1000</h3>
+    <h5 class="subheader">This example demonstrates the animation speed.</h5>
+
+    Config
+    <pre class="brush: js;">
+      $(selector).hcaptions({
+        effect: "slide",
+        speed: "1000"
+      });
+    </pre>
+
+    Magic Attributes
+    <pre class="brush: js; ">
+      cap-effect="slide"
+      cap-speed="1000"
+    </pre>
+  </div>
+
+  <div class="large-4 columns">
+    <a href="#myToggle7" data-toggle="drop-panel" class="panel" cap-speed="1000">
+      <img src="http://placehold.it/470x300/f1f1f1/aaa&text=Example" />
+    </a>
+    <div id="myToggle7" class="cap-overlay hide">
+      <h5>Cupcakes</h5>
+      <div class="content">
+        Name: cupcakes.png<br />
+        Photography: Ryun Shofner<br />
+        <a href="javascript:void(0)" class="button small"><i class="icon-edit"></i> Edit</a> 
+        <a href="javascript:void(0)" class="button small"><i class="icon-remove"></i> Delete</a>
+      </div>
+    </div>
+
+  </div>
+
+  <hr />
+</div>
+
+
+<div class="row">
+  
+  <div class="large-8 columns">
+    <h3>Slide speed: 100</h3>
+    <h5 class="subheader">This example demonstrates the animation speed.</h5>
+
+    Config
+    <pre class="brush: js;">
+      $(selector).hcaptions({
+        effect: "slide",
+        speed: "100"
+      });
+    </pre>
+
+    Magic Attributes
+    <pre class="brush: js; ">
+      cap-effect="slide"
+      cap-speed="100"
+    </pre>
+  </div>
+
+  <div class="large-4 columns">
+    <a href="#myToggle8" data-toggle="drop-panel" class="panel" cap-speed="100">
+      <img src="http://placehold.it/470x300/f1f1f1/aaa&text=Example" />
+    </a>
+    <div id="myToggle8" class="cap-overlay hide">
+      <h5>Cupcakes</h5>
+      <div class="content">
+        Name: cupcakes.png<br />
+        Photography: Ryun Shofner<br />
+        <a href="javascript:void(0)" class="button small"><i class="icon-edit"></i> Edit</a> 
+        <a href="javascript:void(0)" class="button small"><i class="icon-remove"></i> Delete</a>
+      </div>
+    </div>
+
+  </div>
+
+  <hr />
+</div>
+
+<div class="row">
 <div class="large-12">
   <h3>Configuration</h3>
   <h5 class="subheader">Most settings can be set with the plugin or with "magic attributes" you can override the settings for individual captions. A magic attribute is a attribute prepended with <code>cap-</code> for example to override the <code>effect</code> setting, you would use <code>cap-effect="fade"</code> as a html attribute in your tags.</h5>
-<table>
-<tbody><tr>
-<th>Name</th>
-<th>Type</th>
-<th>Description</th>
-<th>Default</th>
-</tr>
-<tr>
-<td>data_selector</td>
-<td>string</td>
-<td>Selector for caption content</td>
-<td>.cap-overlay</td>
-</tr>
-<tr>
-<td>width</td>
-<td>integer</td>
-<td>Overlay width</td>
-<td>full width</td>
-</tr>
-<tr>
-<td>height</td>
-<td>integer</td>
-<td>Overlay height</td>
-<td>full height</td>
-</tr>
-<tr>
-<td>overlay_x</td>
-<td>string</td>
-<td>Horizontal position for the overlay [center, left, right]</td>
-<td>center</td>
-</tr>
-<tr>
-<td>overlay_y</td>
-<td>string</td>
-<td>Vertical position for the overlay [center, top, bottom]</td>
-<td>center</td>
-</tr>
-<tr>
-<td>overlay_bg</td>
-<td>string</td>
-<td>Background css for overlay</td>
-<td>inherits</td>
-</tr>
-<tr>
-<td>overlay_opacity</td>
-<td>integer</td>
-<td>Opacity of overlay</td>
-<td>1</td>
-</tr>
-<tr>
-<td>effect</td>
-<td>string</td>
-<td>Effect for overlay [fade, slide, show/hide]</td>
-<td>slide</td>
-</tr>
-<tr>
-<td>speed</td>
-<td>integer</td>
-<td>Animation speed in ms</td>
-<td>400</td>
-</tr>
-<tr>
-<td>direction</td>
-<td>string</td>
-<td>Direction of overlay [top, bottom, right, left]</td>
-<td>top</td>
-</tr>
-<tr>
-<td>zindex</td>
-<td>integer</td>
-<td>Base Z-Index</td>
-<td>2</td>
-</tr>
-<tr>
-<td>onshow</td>
-<td>function</td>
-<td>Callback fired when caption is shown</td>
-<td>none</td>
-</tr>
-<tr>
-<td>onhide</td>
-<td>function</td>
-<td>Callback fired when caption is hidden</td>
-<td>none</td>
-</tr>
-</tbody></table>
+
+<table width="100%">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+      <th>Default</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>data_selector</td>
+      <td>string</td>
+      <td>Selector for caption content</td>
+      <td>.cap-overlay</td>
+    </tr>
+    <tr>
+    <td>width</td>
+    <td>integer</td>
+    <td>Overlay width</td>
+    <td>full width</td>
+    </tr>
+    <tr>
+    <td>height</td>
+    <td>integer</td>
+    <td>Overlay height</td>
+    <td>full height</td>
+    </tr>
+    <tr>
+    <td>overlay_x</td>
+    <td>string</td>
+    <td>Horizontal position for the overlay [center, left, right]</td>
+    <td>center</td>
+    </tr>
+    <tr>
+    <td>overlay_y</td>
+    <td>string</td>
+    <td>Vertical position for the overlay [center, top, bottom]</td>
+    <td>center</td>
+    </tr>
+    <tr>
+    <td>overlay_bg</td>
+    <td>string</td>
+    <td>Background css for overlay</td>
+    <td>inherits</td>
+    </tr>
+    <tr>
+    <td>overlay_opacity</td>
+    <td>integer</td>
+    <td>Opacity of overlay</td>
+    <td>1</td>
+    </tr>
+    <tr>
+    <td>effect</td>
+    <td>string</td>
+    <td>Effect for overlay [fade, slide, show/hide]</td>
+    <td>slide</td>
+    </tr>
+    <tr>
+    <td>speed</td>
+    <td>integer</td>
+    <td>Animation speed in ms</td>
+    <td>400</td>
+    </tr>
+    <tr>
+    <td>direction</td>
+    <td>string</td>
+    <td>Direction of overlay [top, bottom, right, left]</td>
+    <td>top</td>
+    </tr>
+    <tr>
+    <td>zindex</td>
+    <td>integer</td>
+    <td>Base Z-Index</td>
+    <td>2</td>
+    </tr>
+    <tr>
+    <td>onshow</td>
+    <td>function</td>
+    <td>Callback fired when caption is shown</td>
+    <td>none</td>
+    </tr>
+    <tr>
+    <td>onhide</td>
+    <td>function</td>
+    <td>Callback fired when caption is hidden</td>
+    <td>none</td>
+    </tr>
+  </tbody>
+</table>
 </div>
 </div>
 <script>
