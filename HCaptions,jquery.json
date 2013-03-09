@@ -1,0 +1,36 @@
+{
+    "name": "HCaptions",
+    "title": "Hover Captions",
+    "description": "jHover Captions (here in after: HCaptions) is a jQuery plugin that enables you to display caption overlays with cool effects over images, div's, ect..",
+    "keywords": [
+        "overlay",
+        "caption",
+        "animation",
+        "photo",
+        "image"
+    ],
+    "version": "1.0.0",
+    "author": {
+        "name": "Ryun Shofner",
+        "url": "http://ryun.github.com/"
+    },
+    "maintainers": [
+        {
+            "name": "Ryun Shofner",
+            "url": "http://humboldtweb.com"
+        }
+    ],
+    "licenses": [
+        {
+            "type": "MIT",
+            "url": "http://opensource.org/licenses/MIT"
+        }
+    ],
+    "bugs": "https://github.com/ryun/HCaptions/issues",
+    "homepage": "https://github.com/ryun/HCaptions",
+    "docs": "http://ryun.github.com/HCaptions/",
+    "download": "https://github.com/ryun/HCaptions/archive/master.zip",
+    "dependencies": {
+        "jquery": ">=1.5"
+    }
+}
