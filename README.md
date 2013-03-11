@@ -43,7 +43,7 @@ A magic attribute is a attribute prepended with `cap-` for example to override t
 ### Options
 
 | Name          | Type  | Description  | Default |
-| ------------- | ----- | ------------ | ------- |
+| ------------- | ----- | :------------ | ------- |
 | data_selector | string | Selector for caption content | .cap-overlay |
 | width | integer | Overlay width | full width |
 | height | integer | Overlay height | full height |
