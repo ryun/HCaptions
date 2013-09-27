@@ -132,7 +132,7 @@
 
 			for (var i=0; i<l; i++)
 			{
-				attr = attrs.item(i)
+				attr = attrs.item(i);
 				if (/cap-/i.test(attr.nodeName))
 				{
 					opt[attr.nodeName.replace('cap-', '')] = attr.nodeValue;
@@ -148,7 +148,7 @@
 				, options = $.extend({}, $.fn.hcaptions.defaults, $this.data(), typeof option == 'object' && option);
 			if (!data) $this.data('captions', (data = new Captions(this, options)));
 			if (typeof option == 'string') data[option]();
-		})
+		});
 	};
 
 	$.fn.hcaptions.defaults = {
