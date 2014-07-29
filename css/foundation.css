@@ -4218,7 +4218,7 @@ kbd {
 /* Panels */
 /* line 67, ../../scss/foundation/components/_panels.scss */
 .panel {
-  margin-bottom: 1.25em;
+  /*margin-bottom: 1.25em;*/
   padding: 1.25em;
   -webkit-border-radius: 4px;
   background: #f7f7f7;
